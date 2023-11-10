@@ -1,4 +1,4 @@
-package com.al2000.data.dao;
+package com.al2000.Data.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import com.al2000.data.Utilisateur;
+import com.al2000.Data.data.Utilisateur;
 
 import javax.xml.transform.Result;
 

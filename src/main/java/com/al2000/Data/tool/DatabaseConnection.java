@@ -1,4 +1,4 @@
-package com.al2000.data.tool;
+package com.al2000.Data.tool;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

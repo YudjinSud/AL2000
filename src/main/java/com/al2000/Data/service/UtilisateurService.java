@@ -1,11 +1,12 @@
-package com.al2000.data;
+package com.al2000.Data.service;
 
 
 import java.sql.SQLException;
 import java.util.List;
-import com.al2000.data.dao.UtilisateurDao;
-import com.al2000.data.tool.Session;
-import com.al2000.data.Utilisateur;
+
+import com.al2000.Data.dao.UtilisateurDao;
+import com.al2000.Data.tool.Session;
+import com.al2000.Data.data.Utilisateur;
 
 
 public class UtilisateurService {
@@ -52,7 +53,8 @@ public class UtilisateurService {
     public List<Utilisateur> getAllUsers() throws SQLException {
         try {
             session.open();
-            List<Utilisateur> utilisateurs=null;;
+            List<Utilisateur> utilisateurs = null;
+            ;
             // A complérer
             session.close();
             return utilisateurs;
@@ -65,7 +67,7 @@ public class UtilisateurService {
 
     // Méthode pour mettre à jour un utilisateur
     public void updateUser(Utilisateur utilisateur) throws SQLException {
-       // A complérer
+        // A complérer
     }
 
     // Méthode pour supprimer un utilisateur par son ID

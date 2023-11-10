@@ -5,16 +5,23 @@ package com.al2000;
 //import com.tp.service.UtilisateurService;
 //import com.tp.data.Utilisateur;
 
-import com.al2000.GuiEntry;
+import com.al2000.Data.DataService;
+import com.al2000.Data.data.Utilisateur;
+import com.al2000.GUI.GuiEntry;
+
+import java.sql.SQLException;
 
 public class App {
 
     public static void main(String[] args) {
         try {
-            GuiEntry gui = new GuiEntry("Al 2000");
-            GuiEntry.main(args);
-            System.out.println("Hell");
-        } catch (InterruptedException e) {
+            DataService dataService = new DataService();
+            Utilisateur user = dataService.getUser();
+
+            GuiEntry gui = new GuiEntry("Al 2000", user);
+
+
+        } catch (InterruptedException | SQLException e) {
             System.out.println(e.getMessage());
         }
     }

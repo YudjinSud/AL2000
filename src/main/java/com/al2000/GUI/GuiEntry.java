@@ -1,4 +1,6 @@
-package com.al2000;
+package com.al2000.GUI;
+
+import com.al2000.Data.data.Utilisateur;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -7,11 +9,12 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import java.awt.*;
 
+// TODO (Eugene et Benjamin ) refactor !!!!
 public class GuiEntry extends JFrame {
     protected int W = 400;
     protected int H = 400;
 
-    GuiEntry(String title) throws InterruptedException {
+    public GuiEntry(String title, Utilisateur user) throws InterruptedException {
         super(title);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -20,24 +23,15 @@ public class GuiEntry extends JFrame {
         JPanel searchPanel = new JPanel();
         searchPanel.add(searchText);
         searchPanel.add(searchButton);
+        searchPanel.add(new JTextField(user.getNom()));
         add(searchPanel);
         pack();
 
-    }
+        GuiEntry that = this;
 
+        SwingUtilities.invokeLater(() -> that.setVisible(true));
+
+    }
     public Dimension getPreferredSize() { return new Dimension(W, H); }
 
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    new GuiEntry("AL2000").setVisible(true);
-                } catch (InterruptedException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
 }

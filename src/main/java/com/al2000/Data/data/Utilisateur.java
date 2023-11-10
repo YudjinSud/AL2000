@@ -1,4 +1,4 @@
-package com.al2000.data;
+package com.al2000.Data.data;
 
 public class Utilisateur {
 
