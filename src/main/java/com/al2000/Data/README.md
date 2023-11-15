@@ -25,7 +25,7 @@ Le projet est décomposé en plusieurs répertoires (pas de modules):
 * tool: des classes outils pour ouvrir une connexion avec une BD, gérer des sessions transactionnelles pour les services, une classe qui fournit des méthodes E/S clavier simplifiées au besoin.
 * App.java: un exemple de programme simpliste (le code métier sera à placer dans des classes controleurs d'un vrai projet)
 
-Le répertoire test contient AppTest.java qui décrit l'ensemble des tests à réaliser sur les services.
+Le répertoire test contient com.al2000.AppTest.java qui décrit l'ensemble des tests à réaliser sur les services.
 
 Vous ne modifierez que les dao et service dans ce TP.
 

@@ -5,10 +5,10 @@ import static org.junit.Assert.assertNull;
 
 import java.sql.SQLException;
 import java.sql.Statement;
-import com.tp.dao.UtilisateurDao;
-import com.tp.service.UtilisateurService;
-import com.tp.tool.Session;
-import com.tp.data.Utilisateur;
+import com.al2000.Data.dao.UtilisateurDao;
+import com.al2000.Data.service.UtilisateurService;
+import com.al2000.Data.tool.Session;
+import com.al2000.Data.data.Utilisateur;
 
 import org.junit.After;
 import org.junit.Before;
