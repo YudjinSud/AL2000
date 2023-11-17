@@ -9,6 +9,10 @@ import com.al2000.Data.DataService;
 import com.al2000.Data.data.Utilisateur;
 import com.al2000.GUI.GuiEntry;
 
+import com.al2000.Core.UserFactory;
+import com.al2000.Core.Subscriber;
+
+
 import java.sql.SQLException;
 
 public class App {
@@ -18,10 +22,11 @@ public class App {
             DataService dataService = new DataService();
             Utilisateur user = dataService.getUser();
 
-            GuiEntry gui = new GuiEntry("Al 2000", user);
+            UserFactory user_factory = new UserFactory();
+            Subscriber s = user_factory.createSubscriber(user);
+            System.out.println(s.pseudo + " a un solde de : " + s.getSolde());
 
-
-        } catch (InterruptedException | SQLException e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
