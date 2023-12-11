@@ -10,6 +10,8 @@ public class Subscriber extends User {
     private boolean blocked;
     private List<String> restricted;
     private String pseudo;
+    FacadeDataFct facadeDataFctInstance = new FacadeDataFct();
+
 
     public Subscriber(int userId, String creditCard, float solde, int cardID, boolean blocked,
                       List<String> restricted, String pseudo) {
@@ -25,9 +27,10 @@ public class Subscriber extends User {
 	super(id, card);
     }
 
-    public void setSolde(float amount) {
+    public float setSolde(float amount) {
         float newSolde = this.solde += amount;
-        //FacadeDataFct.setSolde(cardId, newSolde);
+        facadeDataFctInstance.setSolde(cardID, newSolde);
+        return newSolde;
     }
 
 

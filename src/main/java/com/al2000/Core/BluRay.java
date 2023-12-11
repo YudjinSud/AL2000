@@ -6,7 +6,7 @@ public class BluRay extends Movie {
     private boolean available;
 
     public BluRay(String title, String resume, int movieId, String movieType, String director, String actors,
-                  int numberOfRent, int bluRayId) {
+                  int numberOfRent, int bluRayId, boolean available) {
         super(title, resume, movieId, movieType, director, actors);
         this.numberOfRent = numberOfRent;
         this.bluRayId = bluRayId;

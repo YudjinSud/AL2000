@@ -68,29 +68,30 @@ public class Rent {
         }
     }
 
-    public void rentQRCode(Movie catalog) {
-
+    public int rentQRCode(Movie catalog, Subscriber subscriber) {
+        int QRcodeId = 0;
         if (this.ifSubscribed) {
-            float solde = 0.f; // subscriber.getSolde();
-	    float actualPrice = 0.f;
+            float solde = subscriber.getSolde();
+            float actualPrice = this.getForfait();
 
             if (solde >= actualPrice) {
                 Random random = new Random();
-                int QRcodeId = random.nextInt(1000000);
+                QRcodeId = random.nextInt(1000000);
                 System.out.println("Movie  " + catalog.toString() + " rented successfully at a discounted price.");
                 // Deduct the actual price from the solde
-                // this.subscriber.setSolde(solde - actualPrice);
+                subscriber.setSolde(solde - actualPrice);
+                return QRcodeId;
             } else {
                 System.out.println("Insufficient solde to rent  " + catalog.toString());
             }
         } else {
             // If the user is not subscribed, rent the BluRay at the regular price
             Random random = new Random();
-            int QRcodeId = random.nextInt(1000000);
+            QRcodeId = random.nextInt(1000000);
             System.out.println("Movie  " + catalog.toString() + " rented successfully at a discounted price.");
+            return QRcodeId;
         }
-
-        System.out.println("Movie  " + catalog.toString() + " rented successfully at a discounted price.");
+        return QRcodeId;
     }
 
 

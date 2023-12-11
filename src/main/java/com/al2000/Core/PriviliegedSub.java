@@ -5,19 +5,22 @@ import java.util.List;
 
 public class PriviliegedSub extends Subscriber {
     private List<Subscriber> listCard;
+    FacadeDataFct facadeDataFctInstance = new FacadeDataFct();
+
 
     public PriviliegedSub(int userId, String creditCard, float solde, int cardID, boolean blocked,
-                         List<String> restricted, String pseudo) {
+                          List<String> restricted, String pseudo) {
         super(userId, creditCard, solde, cardID, blocked, restricted, pseudo);
         this.listCard = new ArrayList<>();
-        // this.listCard.add(cardID);  // Add the initial card to the list
+        Subscriber subscriber = new Subscriber(userId, creditCard, solde, cardID, blocked, restricted, pseudo);
+        this.listCard.add(subscriber);  // Add the initial card to the list
     }
 
     public void addRestrictedCategory(String cat, int cardId) {
         // Find the subscriber with the specified cardId
         Subscriber subscriber = findCardById(cardId);
         if (subscriber != null) {
-            // FacadeDataFct.addRestrictedCat(cardId, cat);
+            facadeDataFctInstance.addRestrictedCat(cardId, cat);
             System.out.println("Restricted category '" + cat + "' added to card with ID " + cardId);
         } else {
             System.out.println("subscriber with cardID " + cardId + " not found.");
@@ -27,29 +30,31 @@ public class PriviliegedSub extends Subscriber {
     public void removeRestrictedCategory(String cat, int cardId) {
         Subscriber subscriber = findCardById(cardId);
         if (subscriber != null) {
-            //FacadeDataFct.delRestrictedCat(cardId, cat);
+            facadeDataFctInstance.delRestrictedCat(cardId, cat);
             System.out.println("Restricted category '" + cat + "' removed from card with ID " + cardId);
         } else {
             System.out.println("subscriber with cardID " + cardId + " not found.");
         }
     }
 
-/*    public List<SubscriberHistory> getHistory(int cardId) {
+    public ArrayList<String> getHistory(int cardId) {
         Subscriber subscriber = findCardById(cardId);
+        ArrayList<String> list = new ArrayList<>();
         if (subscriber != null) {
-            return FacadeDataFct.getHistory(cardId);
+            list = facadeDataFctInstance.getHistory(cardId);
+            return list;
         }
-        System.out.println("subscriber with cardID " + cardId + " not found.");
+        System.out.println("Subscriber with cardID " + cardId + " not found.");
         return new ArrayList<>();
     }
-*/
+
 
     public void addBalance(int cardId, float amount) {
-        Subscriber subscriber = null; // findCardById(cardId);
+        Subscriber subscriber = findCardById(cardId);
         if (subscriber != null) {
             // Add the balance to the specified card
-            int newSolde = 0; // subscriber.setSolde(subscriber.getSolde() + amount);
-            // FacadeDataFct.setSolde(cardId, newSolde);
+            float newSolde = subscriber.setSolde(subscriber.getSolde() + amount);
+            facadeDataFctInstance.setSolde(cardId, newSolde);
             System.out.println("Balance added to card with ID " + cardId);
         } else {
             System.out.println("subscriber with cardID " + cardId + " not found.");
@@ -75,7 +80,7 @@ public class PriviliegedSub extends Subscriber {
                 isBlocked(), new ArrayList<>(getRestricted()), getPseudo());
         newCardId = 0; // newCard.getCardID();
         userId = getUserId();
-        // FacadeDataFct.addCard(userId, newCardId);
+        facadeDataFctInstance.addCard(userId, newCardId);
     
         System.out.println("New subscriber card created with ID " + newCardId);
     }
