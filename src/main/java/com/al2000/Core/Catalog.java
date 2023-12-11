@@ -14,6 +14,18 @@ public class Catalog {
         movies.add(movie);
     }
 
+    public Movie getMovieByBluRayId(int bluRayId) {
+        for (Movie movie : movies) {
+            if (movie instanceof BluRay) {
+                BluRay bluRay = (BluRay) movie;
+                if (bluRay.getBluRayId() == bluRayId) {
+                    return bluRay;
+                }
+            }
+        }
+        return null; // BluRay with the given ID not found 
+    }
+
     // Method to print information about movies in the catalog
     public void printInfo() {
         System.out.println("Catalog Type: " + typeMovie);
