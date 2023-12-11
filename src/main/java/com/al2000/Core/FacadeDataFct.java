@@ -1,12 +1,12 @@
 package com.al2000.Core;
 
+import com.al2000.Core.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
 public class FacadeDataFct {
-
+/*
 
     public void addSub(Subscriber Subscriber) {
        // database.addUser(Subscriber);
@@ -16,7 +16,7 @@ public class FacadeDataFct {
         // loop in subcribers to find subscriber
         //database.subscriber.set(subscriber);
     }
-    public List<Subscribers> getSubs() {
+    public List<Subscriber> getSubs() {
         //return database.getSubs();
     }
 
@@ -24,9 +24,9 @@ public class FacadeDataFct {
         //return database.getMovies();
     }
 
-    public List<SubscriberHisotory> getHistory() {
+//    public List<SubscriberHistory> getHistory() {
         //return database.getSubscriberHistories();
-    }
+//    }
 
 
 
@@ -43,4 +43,5 @@ public class FacadeDataFct {
     // public void delRestrictedCat(RestrictedCategory restrictedCategory) {
     // database.deleteRestrictedCategory(restrictedCategory);
     // }
+*/
 }

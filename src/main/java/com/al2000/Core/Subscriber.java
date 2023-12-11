@@ -21,6 +21,9 @@ public class Subscriber extends User {
         this.pseudo = pseudo;
     }
 
+    public Subscriber (int id, String card, int solde) {
+	super(id, card);
+    }
 
     public void setSolde(float amount) {
         this.solde = amount;

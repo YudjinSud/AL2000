@@ -1,3 +1,5 @@
+package com.al2000.Core;
+
 public abstract class Movie {
     private String title;
     private String resume;
@@ -14,7 +16,6 @@ public abstract class Movie {
         this.director = director;
         this.actors = actors;
     }
-
 
     public String getTitle() {
         return title;
@@ -62,5 +63,9 @@ public abstract class Movie {
 
     public void setActors(String actors) {
         this.actors = actors;
+    }
+
+    public String toString () {
+	return "";
     }
 }

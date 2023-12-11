@@ -1,3 +1,5 @@
+package com.al2000.Core;
+
 public class BluRay extends Movie {
     private int numberOfRent;
     private int bluRayId;

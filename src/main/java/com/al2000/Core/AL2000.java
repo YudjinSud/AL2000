@@ -1,9 +1,12 @@
+package com.al2000.Core;
+import com.al2000.Core.*;
+
 public class AL2000 {
     private int nbRentals;
     private float sumRentedPrice;
     private float sumDurationRent;
     private User currentUser;
-    private Subscription currentSub;
+    private Subscriber currentSub;
 
     public AL2000() {
         this.nbRentals = 0;
@@ -87,11 +90,11 @@ public class AL2000 {
         this.currentUser = currentUser;
     }
 
-    public Subscription getCurrentSub() {
+    public Subscriber getCurrentSub() {
         return currentSub;
     }
 
-    public void setCurrentSub(Subscription currentSub) {
+    public void setCurrentSub(Subscriber currentSub) {
         this.currentSub = currentSub;
     }
 }
