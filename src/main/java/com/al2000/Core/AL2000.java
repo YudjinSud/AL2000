@@ -1,3 +1,6 @@
+package com.al2000.Core;
+
+
 public class AL2000 {
     private int nbRentals;
     private float sumRentedPrice;

@@ -16,15 +16,17 @@ public class Subscriber extends User {
         super(userId, creditCard);
         this.solde = solde;
         this.cardID = cardID;
-        this.blocked = blocked;
+        this.blocked = false;
         this.restricted = restricted;
         this.pseudo = pseudo;
     }
 
 
     public void setSolde(float amount) {
-        this.solde = amount;
+        float newSolde = this.solde += amount;
+        FacadeDataFct.setSolde(cardId, newSolde);
     }
+
 
     public float getSolde() {
         return solde;

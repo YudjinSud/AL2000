@@ -1,3 +1,6 @@
+package com.al2000.Core;
+
+
 public abstract class Movie {
     private String title;
     private String resume;
