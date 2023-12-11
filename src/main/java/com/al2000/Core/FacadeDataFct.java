@@ -9,25 +9,44 @@ public class FacadeDataFct {
 /*
 
     public void addSub(Subscriber Subscriber) {
-       // database.addUser(Subscriber);
+        SubsService subsService = new SubsService();
+        subsService.addCard(Subscriber.getUserId(), Subscriber.getPseudo(), Subscriber.getSolde());
     }
 
     public void updateSub(Subscriber Subscriber) {
-        // loop in subcribers to find subscriber
-        //database.subscriber.set(subscriber);
+        SubsService subsService = new SubsService();
+        subsService.updateSub(Subscriber.getUserId(), Subscriber.getPseudo(), Subscriber.getSolde());
     }
     public List<Subscriber> getSubs() {
         //return database.getSubs();
     }
 
     public List<Movie> getMovies() {
-        //return database.getMovies();
+        MovieService movieService = new MovieService();
+        // no return ? 
+        
     }
 
-//    public List<SubscriberHistory> getHistory() {
-        //return database.getSubscriberHistories();
-//    }
+    public List<SubscriberHisotory> getHistory(int cardId) {
 
+    }
+    
+    public void setSolde(int cardId, float newSolde) {
+
+    }
+
+    public void addCard(int userId, int newCardId) {
+
+    }
+
+
+    public void delRestrictedCat(int cardId, String cat) {
+
+    }
+
+    public void addRestrictedCat(int cardId, String cat) {
+
+    }
 
 
 
@@ -35,7 +54,6 @@ public class FacadeDataFct {
     //     database.addSubscriptionHistory(subscriptionHistory);
     //     }
 
-    
     // public void addRestrictedCat(RestrictedCategory restrictedCategory) {
     //  database.addRestrictedCategory(restrictedCategory);
     // }
