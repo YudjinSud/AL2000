@@ -4,24 +4,31 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.al2000.Data.data.Subs;
+import com.al2000.Data.service.MovieService;
+import com.al2000.Data.service.SubsService;
+import com.al2000.Data.tool.Session;
+
 
 public class FacadeDataFct {
 
 
     public void addSub(Subscriber Subscriber) {
-       // database.addUser(Subscriber);
+        SubsService subsService = new SubsService();
+        subsService.addCard(Subscriber.getUserId(), Subscriber.getPseudo(), Subscriber.getSolde());
     }
 
     public void updateSub(Subscriber Subscriber) {
-        // loop in subcribers to find subscriber
-        //database.subscriber.set(subscriber);
+        SubsService subsService = new SubsService();
+        subsService.updateSub(Subscriber.getUserId(), Subscriber.getPseudo(), Subscriber.getSolde());
     }
     public List<Subscribers> getSubs() {
         //return database.getSubs();
     }
 
     public List<Movie> getMovies() {
-        //return database.getMovies();
+        MovieService movieService = new MovieService();
+        
     }
 
     public List<SubscriberHisotory> getHistory() {
