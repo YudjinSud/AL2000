@@ -1,32 +1,74 @@
 package com.al2000.Core;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Subscriber extends User {
     private float solde;
-    private int card_id;
+    private int cardID;
     private boolean blocked;
-    private ArrayList<String> restricted;
-    public String pseudo;
+    private List<String> restricted;
+    private String pseudo;
 
-    public Subscriber (int id, String pseudo, int card_id) {
-        this.id = id;
-        this.pseudo = pseudo;
-        this.card_id = card_id;
-        this.solde = 0.f;
-        this.blocked = false;
-        this.restricted = new ArrayList<String>();
-    }
-
-    public String getHistory () {
-        return "";
-    }
-
-    public void setSolde (float solde) {
+    public Subscriber(int userId, String creditCard, float solde, int cardID, boolean blocked,
+                      List<String> restricted, String pseudo) {
+        super(userId, creditCard);
         this.solde = solde;
+        this.cardID = cardID;
+        this.blocked = blocked;
+        this.restricted = restricted;
+        this.pseudo = pseudo;
     }
 
-    public float getSolde () {
+
+    public void setSolde(float amount) {
+        this.solde = amount;
+    }
+
+    public float getSolde() {
         return solde;
+    }
+
+    public int getCardID() {
+        return cardID;
+    }
+
+    public void setCardID(int cardID) {
+        this.cardID = cardID;
+    }
+
+    public boolean isBlocked() {
+        return blocked;
+    }
+
+    public void setBlocked(boolean blocked) {
+        this.blocked = blocked;
+    }
+
+    public List<String> getRestricted() {
+        return restricted;
+    }
+
+    public void setRestricted(List<String> restricted) {
+        this.restricted = restricted;
+    }
+
+    public String getPseudo() {
+        return pseudo;
+    }
+
+    public void setPseudo(String pseudo) {
+        this.pseudo = pseudo;
+    }
+
+    //@Override
+    public void displayUserInfo() {
+       // super.displayUserInfo(); 
+        System.out.println("Solde: " + solde);
+        System.out.println("Card ID: " + cardID);
+        System.out.println("Blocked: " + blocked);
+        System.out.println("Restricted: " + Arrays.toString(restricted.toArray()));
+        System.out.println("Pseudo: " + pseudo);
     }
 }
